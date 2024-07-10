@@ -1,0 +1,264 @@
+    @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+    /*
+    1. Use a more-intuitive box-sizing model.
+    */
+    *,
+    *::before,
+    *::after {
+    box-sizing: border-box;
+    }
+    /*
+    2. Remove default margin
+    */
+    * {
+    margin: 0;
+    }
+    /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+    */
+    body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    }
+    /*
+    5. Improve media defaults
+    */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+    display: block;
+    max-width: 100%;
+    }
+    /*
+    6. Remove built-in form typography styles
+    */
+    input,
+    button,
+    textarea,
+    select {
+    font: inherit;
+    }
+    /*
+    7. Avoid text overflows
+    */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+    overflow-wrap: break-word;
+    }
+
+    h1,
+    h2,
+    h3 {
+    line-height: 1.07;
+    }
+    /*
+    8. Create a root stacking context
+    */
+    #root,
+    #__next {
+    isolation: isolate;
+    }
+
+
+    :root {
+        /* font sizes */
+        --fs-regular : 1rem;
+        --fs-medium : 1.25rem;
+        --fs-large : 2.15rem;
+
+        /* font weight */
+        --fw-regular : 400;
+        --fw-neutral : 600;
+        --fw-bold : 700;
+
+        /* typography */
+        --ff-normal : 'Outfit';
+        --ff-accent : 'Young Serif';
+
+        /* colors */
+        --primary-nutmeg : hsl(14, 45%, 36%);
+        --primary-raspberry : hsl(332, 51%, 32%);
+        --neutral-white : hsl(0, 0%, 100%);
+        --neutral-rose-white : hsl(330, 100%, 98%);
+        --neutral-eggshell : hsl(30, 54%, 90%);
+        --neutral-grey : hsl(30, 18%, 87%);
+        --neutral-wenge : hsl(30, 10%, 34%);
+        --neutral-charcoal : hsl(24, 5%, 18%);
+    }
+
+    body{  
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        font-family: var(--ff-normal);
+        font-size: var(--fs-regular);
+        font-weight: var(--fw-regular);
+        color: var(--neutral-wenge);
+        background-color: var(--neutral-eggshell);
+        
+    }
+
+    form {
+        /* display: flex;
+        flex-direction: column;
+        
+        width: 100%; */
+        max-width: 600px;
+        overflow: hidden;
+        background-color: var(--neutral-white);
+        /* padding: 1.5rem; */
+        /* border-radius: 1rem; */
+    }
+
+    .form-image image {
+        width: 100%;
+        border-radius: .5rem;
+    }
+
+    .form-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        overflow: hidden;
+        font-size: 1rem;
+        background-color: var(--neutral-white);   
+    }
+
+    /* @media (min-width: 600px) {
+        .form-content {
+            padding: 0;
+        }
+    } */
+
+    .form-content h1 {
+        font-family: var(--ff-accent);
+        font-size: var(--fs-large);
+        font-weight: var(--fw-bold);
+        color: var(--neutral-charcoal);
+    }
+
+    .dish-preparation-description {
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+        background-color: var(--neutral-rose-white);
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    .dish-preparation-description h3 {
+        font-size: var(--fs-medium);
+        color: var(--primary-raspberry);
+    }
+
+    .dish-preparation-description li {
+        font-weight: var(--fw-neutral);
+        padding: 2px 0;
+    }
+
+    .dish-preparation-description li span {
+        font-weight: var(--fw-regular);
+    }
+
+    .ingredients {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .ingredients h2 {
+        font-family: var(--ff-accent);
+        color: var(--primary-nutmeg);
+    }
+
+    .ingredients ul li{
+        padding: .25rem 0;
+    }
+
+    .instructions {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;  
+    }
+
+    .instructions h2, .nutrition h2 {
+        font-family: var(--ff-accent);
+        color: var(--primary-nutmeg);
+    }
+
+    .instructions ol li{
+        padding: .25rem 0;
+        font-weight: var(--fw-bold);
+    }
+
+    .instructions ol li span {
+        font-weight: var(--fw-regular);
+    }
+
+    .nutrition {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;      
+    }
+
+    .nutrition-table {
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    .nutrition-table span{
+        content: "";
+        width: 100%;
+        background-color: var(--neutral-grey);
+        height: 1.5px;
+    }
+
+    .nutrition-table .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: .5rem 2rem;
+    }
+
+    .nutrition-table .row :nth-child(2) {
+        font-weight: var(--fw-bold);
+        color: var(--primary-nutmeg);
+    }
+
+    .nutrition-table .row p {
+        flex-grow: 1;
+    }
+
+    @media (min-width: 600px) {
+        body {
+            padding: 20px 0;
+        }
+
+        form {
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .form-image {
+            border-radius: .5rem;
+            overflow: hidden;
+        }
+
+        .form-content {
+            padding: 2rem 0;
+        }
+
+
+    }
